@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the treasure</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        #chest {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        #chest:hover {
+            transform: scale(1.1);
+        }
+        #reveal {
+            display: none;
+            margin-top: 20px;
+        }
+        #prankMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 2px solid gold;
+            box-shadow: 0 0 15px gold;
+            z-index: 1000;
+        }
+        #glow {
+            font-size: 24px;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px gold; }
+            to { text-shadow: 0 0 20px gold; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Congratulations! You Found the Treasure!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quest.html">Quest</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Congratulations, Adventurer!</h2>
+        <p>You reach a hall bigger that a house. In the centre of the room, there is a chest lying plainly which seems very usual</p>
+        
+        <p id="glow">"Come on man! Open it, what are you thinking about?"</p>
+        
+        <p>Curiosity grips you. Do you dare open it?</p>
+        
+        <img id="chest" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c5ffb383edf7d372b9057a6498fc49b4fb2cb18_tresure.jpg" alt="Treasure Chest" onclick="openChest()">
+        
+        <div id="reveal">
+            <p>The chest creaks open, and a dazzling golden light fills the room...</p>
+            <p>As you open the chest, a vision starts around you which feels from the past</p>
+            <video id="prankVideo" width="600" controls>
+                <source src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/0b50c7a1c0fd654879efa34d9cdb06fe207e239d_final_audio.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <p>A voice echoes through the chamber:</p>
+            <p id="glow">"Behold... The Greatest of All Time! Cristiano Ronaldoo!"</p>
+            <p>The legend stands before you. The journey has led you here, to the ultimate revelation.</p>
+        </div>
+
+        <div id="prankMessage">
+            <h2>LOL, get pranked! It's April Fools!</h2>
+            <p style="font-size: 14px;">Thanks for visiting the website tho!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made by a professional named Aditya | <a href="https://swirl.hackclub.com" target="_blank">Know more about swirl</a></p>
+    </footer>
+
+    <script>
+        function openChest() {
+            document.getElementById("chest").style.display = "none";
+            document.getElementById("reveal").style.display = "block";
+            document.getElementById("prankVideo").addEventListener("ended", function() {
+                document.getElementById("prankMessage").style.display = "block";
+            });
+        }
+    </script>
+</body>
+</html>
