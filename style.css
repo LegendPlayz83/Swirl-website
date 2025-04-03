@@ -1,0 +1,42 @@
+/* Note: All these fonts were used by the creator Aditya. Dont you dare try copy my website! hehehehehe*/
+body {
+    font-family: 'MedievalSharp', cursive;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation. update in future */
+nav a {
+    color: yellow;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* Button styling. watch the saved video before doing this*/
+button {
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+/* Footer. Easy */
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: gray;
+}
