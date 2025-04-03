@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Quest - The Legend Awakens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-family: 'MedievalSharp', cursive;
+        }
+        #deepLore {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid gold;
+            border-radius: 10px;
+        }
+        #mysticVideo {
+            width: 80%;
+            max-width: 600px;
+            border: 2px solid gold;
+            border-radius: 10px;
+        }
+        nav a {
+            color: gold;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Mystic Quests</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quest.html">Quest</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Embark on an Adventure</h2>
+            <p>Get the Chest ASAP</p>
+            
+            <video id="mysticVideo" controls>
+                <source src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/df41ef3ab9f20ba08bb7940002cf051b6a5eade3_trump.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            
+            <button id="startButton">Begin Your Quest</button>
+        </section>
+        
+        <section id="deepLore">
+            <h2>Bonus Secret</h2>
+            <p>Long ago, before the kingdoms of men, a shadow loomed over the land...<br>
+            i know it is not helful but adds mystrey to the puzzle tho</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Made by a professional named Aditya | <a href="https://swirl.hackclub.com" target="_blank">Know more about swirl</a></p>
+    </footer>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            window.location.href = "quest.html";
+        });
+    </script>
+</body>
+</html>
