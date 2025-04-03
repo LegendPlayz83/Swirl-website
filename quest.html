@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Mystic Quests</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quest.html">Quest</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Football Quiz Challenge</h2>
+            <p>Answer all 5 questions correctly to unlock the next step of your journey!</p>
+            <div id="quizContainer">
+                <p id="questionText"></p>
+                <input type="text" id="answerInput" placeholder="Your answer here">
+                <button id="submitAnswer">Submit</button>
+                <p id="feedback"></p>
+            </div>
+        </section>
+
+        <section id="rewardSection" style="display: none;">
+            <h2>Congratulations!</h2>
+            <video id="rewardVideo" width="600" controls>
+                <source src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/de9c8e72e164796cf7a495aa923a097aecd33e00_dt_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button onclick="window.location.href='treasure.html'">Go to Treasure</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made by a professional named Aditya | <a href="https://swirl.hackclub.com" target="_blank">Know more about swirl</a></p>
+    </footer>
+
+    <script>
+        const questions = [
+            { question: "Who won the 2018 FIFA World Cup?", answer: "France" },
+            { question: "Which player has won the most Ballon d'Or awards?", answer: "Lionel Messi" },
+            { question: "Which club has won the most UEFA Champions League titles?", answer: "Real Madrid" },
+            { question: "Who is the all-time top scorer in World Cup history?", answer: "Miroslav Klose" },
+            { question: "Which country hosted the first FIFA World Cup in 1930?", answer: "Uruguay" }
+        ];
+
+        let currentQuestionIndex = 0;
+        const questionText = document.getElementById("questionText");
+        const answerInput = document.getElementById("answerInput");
+        const feedback = document.getElementById("feedback");
+        const submitButton = document.getElementById("submitAnswer");
+        const quizContainer = document.getElementById("quizContainer");
+        const rewardSection = document.getElementById("rewardSection");
+        const rewardVideo = document.getElementById("rewardVideo");
+
+        function loadQuestion() {
+            questionText.textContent = questions[currentQuestionIndex].question;
+            answerInput.value = "";
+            feedback.textContent = "";
+        }
+
+        submitButton.addEventListener("click", function() {
+            const userAnswer = answerInput.value.trim();
+            if (userAnswer.toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
+                feedback.textContent = "Correct answer! Next question...";
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    setTimeout(loadQuestion, 1000);
+                } else {
+                    quizContainer.style.display = "none";
+                    rewardSection.style.display = "block";
+                    rewardVideo.play();
+                }
+            } else {
+                feedback.textContent = "Wrong answer! Try again.";
+            }
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
